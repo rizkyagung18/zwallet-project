@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwallet | Aplikasi Dompet Untuk Kita Semua</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        html, body {
+            background-color: #FFFFFF;
+        }
+        .left span {
+            font-size: 29px;
+            margin-bottom: 141px;
+        }
+
+        .header {
+            padding-top: 63px;
+            position: relative;
+        }
+
+        .typo {
+            margin-right: 80px;
+        }
+
+        .left .typo, .partner .typo {
+            width: 474px;
+        }
+        
+        .typo span {
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        .typography {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .left .text, .partner .text {
+            width: 428px;
+            margin-bottom: 50px;
+        }
+
+        .left {
+            margin-bottom: 398px;
+        }
+
+        .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 710px;
+            height: 962px;
+            background-image: url(assets/images/landing/Mask\ Group.png);
+            background-repeat: no-repeat;
+            padding: 55px 150px;
+            overflow: visible;
+        }
+
+        .login-btn {
+            width: 120px;
+            height: 48px;
+            background-color: #6379F4;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            box-sizing: border-box;
+            box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+            border-radius: 12px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+
+        .reg-btn {
+            width: 120px;
+            height: 48px;
+            background-color:#FFFFFF;
+            color: #6379F4;
+            border: 2px solid #FFFFFF;
+            box-sizing: border-box;
+            box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .about, .testimonial {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .bg-liquid {
+            background-color: rgba(71, 58, 209, 0.06);
+        }
+
+        .desc {
+            width: 567px;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 25px;
+            padding: 40px 30px 50px 30px;
+            margin: 70px 20px;
+        }
+
+        .card div {
+            margin-bottom: 35px;
+        }
+
+        .card div:last-child {
+            margin-bottom: 0;
+        }
+
+        .partner {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .phone {
+            z-index: 1;
+        }
+
+        .icons {
+            margin-top: 120px;
+        }
+
+        .footer {
+            color: rgba(239, 239, 239, 0.75);
+        }
+
+        .footer .title {
+            margin-top: 80px;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .desc-footer {
+            width: 285px;
+            margin-bottom: 50px;
+        }
+
+        hr {
+            margin-bottom: 30px;
+        }
+
+        .features {
+            padding: 70px 0;
+        }
+
+        .label {
+            padding: 25px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="bg-white header">
+        <div class="container d-flex justify-content-between">
+            <div class="left d-flex flex-column flex-grow-1">
+                <span class="title primary bold">Zwallet</span>
+                <div class="typo">
+                    <span class="typography text-black">Awesome App For Saving <span class="primary">Time.</span></p>
+                </div>
+                <div class="text text-black">
+                    We bring you a mobile app for banking problems that oftenly wasting much of your times.
+                </div>
+                <button class="btn-primary">Try It Free</button>
+            </div>
+            <div class="right d-flex flex-column align-items-end flex-grow-1">
+                <div class="button">
+                    <a href="components/login.html"><button class="login-btn">Login</button></a>
+                    <a href="components/signup.html"><button class="reg-btn">Sign Up</button></a>
+                </div>
+                <div class="phone">
+                    <img src="assets/images/landing/phone.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="bg-liquid about">
+        <div class="container">
+            <div class="typo text-center mb-4">
+                <span><span class="primary">About</span> the Application.</span>
+            </div>
+            <div class="desc">
+                <p class="text-center text">We have some great features from the application and it’s totally free to use by all users around the world.</p>
+            </div>
+            <div class="cards d-flex">
+                <div class="card">
+                    <div class="avatar">
+                        <img src="assets/images/landing/about/1.svg" alt="">
+                    </div>
+                    <div class="title">
+                        <span class="big bold">24/7 Support</span>
+                    </div>
+                    <div class="description">
+                        <p class="text text-center">We have 24/7 contact support so you can contact us whenever you want and we will respond it.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="avatar">
+                        <img src="assets/images/landing/about/2.svg" alt="">
+                    </div>
+                    <div class="title">
+                        <span class="big bold">Data Privacy</span>
+                    </div>
+                    <div class="description">
+                        <p class="text text-center">We make sure your data is safe in our database and we will encrypt any data you submitted to us.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="avatar">
+                        <img src="assets/images/landing/about/3.svg" alt="">
+                    </div>
+                    <div class="title">
+                        <span class="big bold">Easy Download</span>
+                    </div>
+                    <div class="description">
+                        <p class="text text-center">Zwallet is 100% totally free to use it’s now available on Google Play Store and App Store.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Section -->
+    <div class="bg-white partners">
+        <div class="container d-flex justify-content-between">
+            <div class="partner d-flex flex-column">
+                <div class="typo mb-5">
+                    <span>100+ <span class="primary">Trusted</span> Partners.</span>
+                </div>
+                <div class="text">
+                    <p>We have reached global level and have 100+ brand partners around the globe.</p>
+                </div>
+            </div>
+            <div class="icons">
+               <div class="row">
+                   <div class="col-4">
+                        <div class="icon">
+                            <img src="assets/images/landing/partner/1.svg" alt="">
+                        </div>
+                   </div>
+                   <div class="col-4">
+                        <div class="icon">
+                            <img src="assets/images/landing/partner/2.svg" alt="">
+                        </div>
+                   </div>
+                   <div class="col-4">
+                        <div class="icon">
+                            <img src="assets/images/landing/partner/3.svg" alt="">
+                        </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-4">
+                        <div class="icon">
+                            <img src="assets/images/landing/partner/4.svg" alt="">
+                        </div>
+                   </div>
+                   <div class="col-4">
+                        <div class="icon">
+                            <img src="assets/images/landing/partner/5.svg" alt="">
+                        </div>
+                   </div>
+                   <div class="col-4">
+                        <div class="icon">
+                            <img src="assets/images/landing/partner/6.svg" alt="">
+                        </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Section -->
+    <div class="bg-liquid">
+        <div class="container d-flex justify-content-between py-5">
+            <div class="phone2" style="margin-right: 50px;">
+                <img src="assets/images/landing/phone2.png" alt="">
+            </div>
+            <div class="features">
+                <div class="typo mb-4">
+                    <span>All The <span class="primary">Great</span> Zwallet Features.</span>
+                </div>
+                <div class="label">
+                    <div class="bold mb-3"><span class="primary bold mr-2">1.</span>Small Fee</div>
+                    <div class="text" style="color: rgba(58, 61, 66, 0.9);">We only charge 5% of every success transaction done in Zwallet app.</div>
+                </div>
+                <div class="label">
+                    <div class="bold mb-3"><span class="primary bold mr-2">2.</span>Data Secured</div>
+                    <div class="text" style="color: rgba(58, 61, 66, 0.9);">All your data is secured properly in our system and it’s encrypted.</div>
+                </div>
+                <div class="label">
+                    <div class="bold mb-3"><span class="primary bold mr-2">3.</span>User Friendly</div>
+                    <div class="text" style="color: rgba(58, 61, 66, 0.9);">Zwallet come up with modern and sleek design and not complicated.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="bg-white testimonial">
+        <div class="container">
+            <div class="typo text-center mb-4">
+                <span>What Users are <span class="primary">Saying.</span></span>
+            </div>
+            <div class="desc">
+                <p class="text-center text">We have some great features from the application and it’s totally free to use by all users around the world.</p>
+            </div>
+            <div class="cards d-flex">
+                <div class="card">
+                    <div class="avatar">
+                        <img src="assets/images/landing/testimonial/1.png" alt="">
+                    </div>
+                    <div class="title">
+                        <span class="big bold">Sherina Chaw</span>
+                    </div>
+                    <div class="description">
+                        <p class="text text-center">“I use this app since 2 years ago and this is the best app that I’ve ever use in my entire life”</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="avatar">
+                        <img src="assets/images/landing/testimonial/2.png" alt="">
+                    </div>
+                    <div class="title">
+                        <span class="big bold">Jessica Mera</span>
+                    </div>
+                    <div class="description">
+                        <p class="text text-center">“I use Zwallet to manage all financial needs. It’s super easy to use and it’s 100% free app”</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="avatar">
+                        <img src="assets/images/landing/testimonial/3.png" alt="">
+                    </div>
+                    <div class="title">
+                        <span class="big bold">Robert Chandler</span>
+                    </div>
+                    <div class="description">
+                        <p class="text text-center">“Since I’m using this app, I’m not going to move to another similar app. Thank you Zwallet!”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-primary footer">
+        <div class="container footer">
+            <div class="title text-white bold">Zwallet</div>
+            <div class="desc-footer">
+                <p class="text">Simplify financial needs and saving much time in banking needs with one single app.</p>
+            </div>
+            <hr style="border: 1px solid rgba(255, 255, 255, 0.6);">
+            <div class="d-flex justify-content-between">
+                <div class="med text">2020 Zwallet. All right reserved.</div>
+                <div class="med d-flex">
+                    <p class="mr-4" style="color: #EFEFEF;">+62 5637 8882 9901</p>
+                    <p style="color: #EFEFEF;">contact@zwallet.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

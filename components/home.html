@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZWallet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+    <style>
+        .content-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-panel {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            padding: 30px 30px;
+            box-sizing: border-box;
+        }
+
+        .top div img {
+            margin-bottom: 15px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .balance {
+            color: #E0E0E0;
+        }
+
+        .price {
+            font-size: 40px;
+            color: #FFFFFF;
+        }
+
+        .phone {
+            font-size: 14px;
+            color: #DFDCDC;
+            font-weight: 600;
+        }
+
+        .top {
+            margin-bottom: 60px;
+        }
+
+        .bottom-panel {
+            flex: 1;
+            display: flex;
+        }
+
+        .chart {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 25px;
+            margin-right: 20px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .chart .top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chart .top .right {
+            align-items: flex-start;
+        }
+
+        .bar {
+            border-radius: 15px;
+            width: 14px;
+            margin-bottom: 20px;
+        }
+
+        .saturday {
+            height: 223px;
+        }
+
+        .sunday {
+            height: 97px;
+        }
+
+        .monday {
+            height: 149px;
+        }
+
+        .tuesday {
+            height: 183px;
+        }
+
+        .wednesday {
+            height: 138px;
+        }
+
+        .thursday {
+            height: 197px;
+        }
+
+        .friday {
+            height: 155px;
+        }
+
+        .chart .bottom {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .bottom .items {
+            display: flex;
+            flex-direction: column;
+            margin-right: 35px;
+        }
+
+        .bottom .items:last-child {
+            margin-right: 0;
+        }
+
+        .history {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 25px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .history .desc, .history .items {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            align-items: center;
+        }
+
+        .desc-title {
+            margin: 0;
+        }
+        
+        .items:last-child {
+            margin-bottom: 0;
+        }
+
+        .history-text {
+            font-size: 16px;
+        }
+
+        .items .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .history .items .left div {
+            margin-right: 20px;
+        }
+
+        .history .items .left .info {
+            align-items: flex-start;
+        }
+
+        .avatar {
+            width: 56px;
+        }
+
+        .myChart {
+            width: 100%;
+        }
+
+        .bg-top-panel {
+            background-color: #6379F4;
+        }
+
+        .bg-top-panel.active {
+            background-image:linear-gradient(180deg, #4927F2 0%, #444AB1 100%);
+        }
+
+        @media screen and (max-width:1200px) {
+            .bottom-panel {
+                flex-direction: column;
+            }
+
+            .bottom-panel div {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .top-panel {
+                margin-bottom: 40px;
+            }
+
+            .top-panel {
+                flex-direction: column;
+            }
+
+            .top-panel .left {
+                margin-bottom: 20px;
+            }
+
+            .top-panel .right {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .right button {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .history .desc {
+                margin-bottom: 40px;
+            }
+
+            .bottom-panel .chart {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container navbar">
+        <div class="logo primary">Zwallet</div>
+        <div class="profile">
+            <div class="items photo">
+                <img src="../assets/images/logo.png" alt="">
+            </div>
+            <div class="items info">
+                <div class="text bold">Robert Chandler</div>
+                <div class="small">+62 8139 3877 7946</div>
+            </div>
+            <div class="items icon">
+                <img id="bell" src="../assets/images/bell.svg" alt="">
+            </div>
+        </div>
+        <div id="sidenav" class="sidenav">
+            <div class="d-flex justify-content-between top">
+                <div class="image mr-4">
+                    <img src="../assets/images/search/4.png" alt="">
+                </div>
+                <div class="info d-flex flex-column mb-5">
+                    <span class="bold text">Robert Chandler</span>
+                    <span class="med">+62 8139 3877 7946</span>
+                </div>
+            </div>
+            <hr width="100%">
+            <div class="d-flex flex-column align-items-center justify-content-between bottom">
+                <div class="d-flex justify-content-between flex-column align-items-center">
+                    <div class="px-4 my-5">
+                        <span class="big primary bold"><a href="home.html">Dashboard</a></span>
+                        <hr class="bg-primary">
+                    </div>
+                    <div class="py-4 my-5">
+                        <span class="big primary bold"><a href="search.html">Transfer</a></span>
+                        <hr class="bg-primary">
+                    </div>
+                    <div class="px-4 my-5">
+                        <span class="big primary bold"><a href="topup.html">Top Up</a></span>
+                        <hr class="bg-primary">
+                    </div>
+                    <div class="px-4 my-5">
+                        <span class="big primary bold">Profile</span>
+                        <hr class="bg-primary">
+                    </div>
+                </div>
+                <div class="sidenav-logout align-self-center my-5">
+                    <span class="big primary bold"><a href="login.html">Logout</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger">
+            <div class="bg-primary"></div>
+            <div class="bg-primary"></div>
+            <div class="bg-primary"></div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container content">
+        <div class="content-menu">
+            <div class="menu">
+                <div class="item bold activated primary">
+                    <img src="../assets/images/active/grid.svg" alt="">
+                    <span class="text"><a href="home.html">Dashboard</a></span>
+                </div>
+                <div class="item">
+                    <img src="../assets/images/arrow-up.svg" alt="">
+                    <span class="text" style="color: #3A3D42";><a href="search.html">Transfer</a></span>
+                </div>
+                <div class="item">
+                    <img src="../assets/images/plus.svg" alt="">
+                    <span class="text"><a href="topup.html">Top Up</a></span>
+                </div>
+                <div class="item">
+                    <img src="../assets/images/user.svg" alt="">
+                    <span class="text" style="color: #3A3D42">Profile</span>
+                </div>
+            </div>
+            <div class="item logout">
+                <img src="../assets/images/log-out.svg" alt="">
+                <a href="login.html"><span class="text">Logout</span></a>
+            </div>
+        </div>
+        <div class="content-main">
+            <div id="top-panel" class="top-panel bg-top-panel">
+                <div class="left">
+                    <p class="balance text">Balance</p>
+                    <p class="price bold">Rp120.000</p>
+                    <p class="phone">+62 813-9387-7946</p>
+                </div>
+                <div class="right">
+                    <button class="btn-light-primary">
+                        <img src="../assets/images/balance/arrow-up.svg" alt="">
+                        Transfer
+                    </button>
+                    <button class="btn-light-primary">
+                        <img src="../assets/images/balance/plus.svg" alt="">
+                        Top Up
+                    </button>
+                </div>
+            </div>
+            <div class="bottom-panel">
+                <div class="chart">
+                    <div class="top">
+                        <div class="left">
+                            <img src="../assets/images/chart/arrow-down.svg" alt="">
+                            <p class="small" style="color: #6A6A6A;">Income</p>
+                            <p class="text bold" style="color: #3A3D42;">Rp2.120.000</p>
+                        </div>
+                        <div class="right">
+                            <img src="../assets/images/chart/arrow-up.svg" alt="">
+                            <p class="small" style="color: #6A6A6A;">Expense</p>
+                            <p class="text bold" style="color: #3A3D42;">Rp1.560.000</p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <canvas id="myChart" height="268px"></canvas>
+                    </div>
+                </div>
+                <div class="history">
+                    <div class="desc">
+                        <span class="text bold desc-title" style="color: #3A3D42;">Transaction History</span>
+                        <a href="history.html" class="small primary" style="font-weight: 600;">See all</a>
+                    </div>
+                    <div class="items">
+                        <div class="left">
+                            <div class="avatar">
+                                <img src="../assets/images/history/1.png" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="bold history-text">Samuel Suhi</p>
+                                <p class="small">Transfer</p>
+                            </div>
+                        </div>
+                        <div class="money">
+                            <p class="bold history-text" style="color: #1EC15F;">+Rp50.000</p>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <div class="left">
+                            <div class="avatar">
+                                <img src="../assets/images/history/2.png" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="bold history-text">Netflix</p>
+                                <p class="small">Subscription</p>
+                            </div>
+                        </div>
+                        <div class="money">
+                            <p class="bold history-text" style="color: #FF5B37;">-Rp149.000</p>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <div class="left">
+                            <div class="avatar">
+                                <img src="../assets/images/history/3.png" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="bold history-text">Christine Mar...</p>
+                                <p class="small">Transfer</p>
+                            </div>
+                        </div>
+                        <div class="money">
+                            <p class="bold history-text" style="color: #1EC15F;">+Rp150.000</p>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <div class="left">
+                            <div class="avatar">
+                                <img src="../assets/images/history/4.png" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="bold history-text">Adobe Inc.</>
+                                <p class="small">Subscription</p>
+                            </div>
+                        </div>
+                        <div class="money">
+                            <p class="bold history-text" style="color: #FF5B37;">+Rp50.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-notification">
+                <div class="report">
+                    <p class="med date">Today</p>
+                    <div class="label">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-down.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Transfered from Joshua Lee</p>
+                            <p class="text bold">Rp220.000</p>
+                        </div>
+                    </div>
+                    <div class="label mb-5">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-up.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Netflix subscription</p>
+                            <p class="text bold">Rp149.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <p class="med date">This Week</p>
+                    <div class="label">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-up.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Transfer to Jessica Lee</p>
+                            <p class="text bold">Rp100.000</p>
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-down.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Top up from BNI E-Banking</p>
+                            <p class="text bold">Rp300.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary footer">
+        <div class="container footer-content">
+            <div class="panel-left">
+                2020 Zwallet. All right reserved.
+            </div>
+            <div class="panel-right">
+                <div>+62 5637 8882 9901</div>
+                <div>contact@zwallet.com</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        let ctx = document.getElementById('myChart').getContext('2d')
+
+        let myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: '',
+                    backgroundColor: ['#6379F4', '#6379F4', '#9DA6B5', '#9DA6B5', '#9DA6B5' , '#6379F4', '#9DA6B5' ],
+                    barThickness: 15,
+                    data: [223, 97, 149, 183, 138, 197, 155]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                responsive: true,
+                scales: {
+                xAxes: [
+                    {
+                    maxBarThickness: 20,
+                    gridLines: {
+                        lineWidth: 0,
+                        display: false,
+                    },
+                    },
+                ],
+                yAxes: [
+                    {
+                    ticks: {
+                        display: false,
+                    },
+                    gridLines: {
+                        lineWidth: 0,
+                        display: false,
+                    },
+                    },
+                ],
+            },
+        }
+        })
+
+        Chart.elements.Rectangle.prototype.draw = function () {
+          var ctx = this._chart.ctx;
+          var vm = this._view;
+          var left, right, top, bottom, signX, signY, borderSkipped, radius;
+          var borderWidth = vm.borderWidth;
+          // Set Radius Here
+          // If radius is large enough to cause drawing errors a max radius is imposed
+          var cornerRadius = 20;
+
+          if (!vm.horizontal) {
+            // bar
+            left = vm.x - vm.width / 2;
+            right = vm.x + vm.width / 2;
+            top = vm.y;
+            bottom = vm.base;
+            signX = 1;
+            signY = bottom > top ? 1 : -1;
+            borderSkipped = vm.borderSkipped || "bottom";
+          } else {
+            // horizontal bar
+            left = vm.base;
+            right = vm.x;
+            top = vm.y - vm.height / 2;
+            bottom = vm.y + vm.height / 2;
+            signX = right > left ? 1 : -1;
+            signY = 1;
+            borderSkipped = vm.borderSkipped || "left";
+          }
+
+          // Canvas doesn't allow us to stroke inside the width so we can
+          // adjust the sizes to fit if we're setting a stroke on the line
+          if (borderWidth) {
+            // borderWidth shold be less than bar width and bar height.
+            var barSize = Math.min(
+              Math.abs(left - right),
+              Math.abs(top - bottom)
+            );
+            borderWidth = borderWidth > barSize ? barSize : borderWidth;
+            var halfStroke = borderWidth / 2;
+            // Adjust borderWidth when bar top position is near vm.base(zero).
+            var borderLeft =
+              left + (borderSkipped !== "left" ? halfStroke * signX : 0);
+            var borderRight =
+              right + (borderSkipped !== "right" ? -halfStroke * signX : 0);
+            var borderTop =
+              top + (borderSkipped !== "top" ? halfStroke * signY : 0);
+            var borderBottom =
+              bottom + (borderSkipped !== "bottom" ? -halfStroke * signY : 0);
+            // not become a vertical line?
+            if (borderLeft !== borderRight) {
+              top = borderTop;
+              bottom = borderBottom;
+            }
+            // not become a horizontal line?
+            if (borderTop !== borderBottom) {
+              left = borderLeft;
+              right = borderRight;
+            }
+          }
+
+          ctx.beginPath();
+          ctx.fillStyle = vm.backgroundColor;
+          ctx.strokeStyle = vm.borderColor;
+          ctx.lineWidth = borderWidth;
+
+          // Corner points, from bottom-left to bottom-right clockwise
+          // | 1 2 |
+          // | 0 3 |
+          var corners = [
+            [left, bottom],
+            [left, top],
+            [right, top],
+            [right, bottom],
+          ];
+
+          // Find first (starting) corner with fallback to 'bottom'
+          var borders = ["bottom", "left", "top", "right"];
+          var startCorner = borders.indexOf(borderSkipped, 0);
+          if (startCorner === -1) {
+            startCorner = 0;
+          }
+
+          function cornerAt(index) {
+            return corners[(startCorner + index) % 4];
+          }
+
+          // Draw rectangle from 'startCorner'
+          var corner = cornerAt(0);
+          ctx.moveTo(corner[0], corner[1]);
+
+          for (var i = 1; i < 4; i++) {
+            corner = cornerAt(i);
+            nextCornerId = i + 1;
+            if (nextCornerId == 4) {
+              nextCornerId = 0;
+            }
+
+            nextCorner = cornerAt(nextCornerId);
+
+            width = corners[2][0] - corners[1][0];
+            height = corners[0][1] - corners[1][1];
+            x = corners[1][0];
+            y = corners[1][1];
+
+            var radius = cornerRadius;
+
+            // Fix radius being too large
+            if (radius > height / 2) {
+              radius = height / 2;
+            }
+            if (radius > width / 2) {
+              radius = width / 2;
+            }
+
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(
+              x + width,
+              y + height,
+              x + width - radius,
+              y + height
+            );
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+          }
+
+          ctx.fill();
+          if (borderWidth) {
+            ctx.stroke();
+          }
+        };
+    </script>
+</body>
+</html>

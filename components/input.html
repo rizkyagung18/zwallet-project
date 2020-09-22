@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZWallet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .content-main {
+            flex: 1;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 25px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .where .profile {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        .avatar {
+            margin-right: 20px;
+        }
+
+        .type {
+            width: 338px;
+            color: #7A7886;
+            margin-bottom: 50px;
+        }
+
+        .input {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .amount {
+            width: 100%;
+            padding: 15 auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 42px;
+            border: none;
+            outline: none;
+            margin-bottom: 30px;
+        }
+
+        .amount::placeholder {
+            color: #B5BDCC;
+        }
+
+        .cash {
+            text-align: center;
+        }
+
+        .notes {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .notes input:focus {
+            border: none;
+            border-bottom: 1px solid #6379F4;
+            outline: none;
+        }
+
+        .note {
+            padding-left: 35px;
+            padding-bottom: 10px;
+            width: 45%;
+            border: none;
+            border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+        }
+
+        .note::placeholder {
+            color: #B5BDCC;
+        }
+
+        .edit {
+            position: absolute;
+        }
+
+        .confirm {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container navbar">
+        <div class="logo primary">Zwallet</div>
+        <div class="profile">
+            <div class="items photo">
+                <img src="../assets/images/logo.png" alt="">
+            </div>
+            <div class="items info">
+                <div class="text bold">Robert Chandler</div>
+                <div class="small">+62 8139 3877 7946</div>
+            </div>
+            <div class="items icon">
+                <img id="bell" src="../assets/images/bell.svg" alt="">
+            </div>
+        </div>
+        <div id="sidenav" class="sidenav">
+            <div class="d-flex justify-content-between top">
+                <div class="image mr-4">
+                    <img src="../assets/images/search/4.png" alt="">
+                </div>
+                <div class="info d-flex flex-column mb-5">
+                    <span class="bold text">Robert Chandler</span>
+                    <span class="med">+62 8139 3877 7946</span>
+                </div>
+            </div>
+            <hr width="100%">
+            <div class="d-flex flex-column align-items-center justify-content-between bottom">
+                <div class="d-flex justify-content-between flex-column align-items-center">
+                    <div class="px-4 my-5">
+                        <span class="big primary bold"><a href="home.html">Dashboard</a></span>
+                        <hr class="bg-primary">
+                    </div>
+                    <div class="py-4 my-5">
+                        <span class="big primary bold"><a href="search.html">Transfer</a></span>
+                        <hr class="bg-primary">
+                    </div>
+                    <div class="px-4 my-5">
+                        <span class="big primary bold"><a href="topup.html">Top Up</a></span>
+                        <hr class="bg-primary">
+                    </div>
+                    <div class="px-4 my-5">
+                        <span class="big primary bold">Profile</span>
+                        <hr class="bg-primary">
+                    </div>
+                </div>
+                <div class="sidenav-logout align-self-center my-5">
+                    <span class="big primary bold"><a href="login.html">Logout</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger">
+            <div class="bg-primary"></div>
+            <div class="bg-primary"></div>
+            <div class="bg-primary"></div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container content">
+        <div class="content-menu">
+            <div class="menu">
+                <div class="item">
+                    <img src="../assets/images/grid.svg" alt="">
+                    <span class="text"><a href="home.html">Dashboard</a></span>
+                </div>
+                <div class="item bold activated primary">
+                    <img src="../assets/images/active/arrow-up.svg" alt="">
+                    <span class="text"><a href="search.html">Transfer</a></span>
+                </div>
+                <div class="item">
+                    <img src="../assets/images/plus.svg" alt="">
+                    <span class="text"><a href="topup.html">Top Up</a></span>
+                </div>
+                <div class="item">
+                    <img src="../assets/images/user.svg" alt="">
+                    <span class="text">Profile</span>
+                </div>
+            </div>
+            <div class="item logout">
+                <img src="../assets/images/log-out.svg" alt="">
+                <a href="login.html"><span class="text">Logout</span></a>
+            </div>
+        </div>
+        <div class="content-main">
+            <div class="where">
+                <p class="text bold">Transfer Money</p>
+                <div class="profile label">
+                    <div class="avatar">
+                        <img src="../assets/images/search/1.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="name text bold">Samuel Suhi</p>
+                        <div class="phone med">+62 813-8492-9994</div>
+                    </div>
+                </div>
+            </div>
+            <div class="med type">
+                Type the amount you want to transfer and then press continue to the next steps.
+            </div>
+            <div class="input">
+                <input class="amount primary" type="text" placeholder="0.00" maxlength="10">
+                <span class="cash bold med">Rp120.000 Available</span>
+            </div>
+            <div class="notes">
+                <img class="edit" src="../assets/images/edit.svg" alt=""/>
+                <input class="note" type="text" placeholder="Add some notes">
+            </div>
+            <div class="confirm">
+                <a href="confirm.html"><button class="btn-primary">Continue</button></a>
+            </div>
+            <div class="content-notification">
+                <div class="report">
+                    <p class="med date">Today</p>
+                    <div class="label">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-down.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Transfered from Joshua Lee</p>
+                            <p class="text bold">Rp220.000</p>
+                        </div>
+                    </div>
+                    <div class="label mb-5">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-up.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Netflix subscription</p>
+                            <p class="text bold">Rp149.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <p class="med date">This Week</p>
+                    <div class="label">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-up.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Transfer to Jessica Lee</p>
+                            <p class="text bold">Rp100.000</p>
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="icon mr-3">
+                            <img src="../assets/images/chart/arrow-down.svg" alt="">
+                        </div>
+                        <div class="info">
+                            <p class="small">Top up from BNI E-Banking</p>
+                            <p class="text bold">Rp300.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary footer">
+        <div class="container footer-content">
+        <div class="panel-left">
+            2020 Zwallet. All right reserved.
+        </div>
+        <div class="panel-right">
+            <div>+62 5637 8882 9901</div>
+            <div>contact@zwallet.com</div>
+        </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
