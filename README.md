@@ -17,5 +17,5 @@ ________________________________________________________________________________
 _______________________________________________________________________________________
 
 ## Deployed on Netlify
-[![]()](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmiro.medium.com%2Fmax%2F3000%2F1*9fmBo2RxWr_zmUFYm9e5ag.gif&imgrefurl=https%3A%2F%2Fmedium.com%2F%40odeyjohn4u%2Fdeploying-static-landing-pages-on-netlify-without-github-beb8689ec54e&tbnid=iC_qgPr4F4-O2M&vet=12ahUKEwjztqXN1v_rAhURKbcAHYOXC9UQMygCegUIARCsAQ..i&docid=lfyDRUSZkXvCWM&w=1500&h=1000&q=netlify&safe=strict&ved=2ahUKEwjztqXN1v_rAhURKbcAHYOXC9UQMygCegUIARCsAQ)
+[![An old rock in the desert](/assets/images/shiprock.jpg "Shiprock, New Mexico by Beau Rogers")](https://www.flickr.com/photos/beaurogers/31833779864/in/photolist-Qv3rFw-34mt9F-a9Cmfy-5Ha3Zi-9msKdv-o3hgjr-hWpUte-4WMsJ1-KUQ8N-deshUb-vssBD-6CQci6-8AFCiD-zsJWT-nNfsgB-dPDwZJ-bn9JGn-5HtSXY-6CUhAL-a4UTXB-ugPum-KUPSo-fBLNm-6CUmpy-4WMsc9-8a7D3T-83KJev-6CQ2bK-nNusHJ-a78rQH-nw3NvT-7aq2qf-8wwBso-3nNceh-ugSKP-4mh4kh-bbeeqH-a7biME-q3PtTf-brFpgb-cg38zw-bXMZc-nJPELD-f58Lmo-bXMYG-bz8AAi-bxNtNT-bXMYi-bXMY6-bXMYv)
 https://z-wallet.netlify.app
