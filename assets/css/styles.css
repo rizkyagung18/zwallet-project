@@ -313,7 +313,7 @@ nav .items.icon {
         z-index: 4;
         flex-direction: column;
         justify-content: space-between;
-        position: absolute;
+        position: fixed;
         width: 100%;
         right: 0;
         top: 15.05vh;
