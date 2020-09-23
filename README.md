@@ -12,7 +12,13 @@ Zwallet adalah sebuah aplikasi yang berfokus pada kebutuhan perbankan untuk semu
 
 ______________________________________________________________________________________
 
-## Features
+## Page
+- Landing Page
+- Login & Sign Up
+- Home
+- Transaction History
+- Transfer
+- PIN Input
 
 _______________________________________________________________________________________
 
