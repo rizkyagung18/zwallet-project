@@ -224,3 +224,27 @@ hr {
         margin: 10px auto;
     }
 }
+
+@media screen and (max-width: 576px) {
+    .left .typo, .partner .typo {
+        width: 100%;
+    }
+
+    .phone, .phone2 {
+        margin: 0;
+    }
+
+    .features.container {
+        margin-left: 0 !important;
+        overflow-x: scroll;
+        justify-content: center !important;
+    }
+
+    .left .title {
+        opacity: 0;
+    }
+
+    .reg-btn {
+        margin-left: 10px;
+    }
+}

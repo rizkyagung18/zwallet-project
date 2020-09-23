@@ -1,0 +1,120 @@
+.content {
+    display: flex;
+}
+
+.left {
+    background-image: url(../images/bg-login.png);
+    flex: 1.25;
+    padding: 50px 0 50px 200px;
+}
+
+.right {
+    background-color: #FFFFFF;
+    flex: 1;
+    padding: 120px 150px 150px 40px;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.image {
+    margin-bottom: 20px;
+}
+
+.sponsor {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.desc-left {
+    width: 488px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+.desc-right {
+    width: 433px;
+    color: rgba(58, 61, 66, 0.6);
+    margin-bottom: 60px;
+}
+
+.big {
+    font-size: 24px;
+}
+
+.start {
+    width: 384px;
+    margin-bottom: 30px;
+}
+
+.right .input {
+    position: relative;
+}
+
+.right .input input {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+    padding: 15px 40px;
+    background-color: transparent;
+}
+
+.right .users {
+    margin-bottom: 60px;
+}
+
+.right .email {
+    margin-bottom: 60px;
+}
+
+.mail {
+    position: absolute;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/mail.svg);
+    background-size: cover;
+}
+
+.person {
+    position: absolute;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/person.svg);
+    background-size: cover;
+}
+
+.right .password.input {
+    margin-bottom: 120px;
+}
+
+.lock {
+    position: absolute;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/lock.svg);
+    background-size: cover;
+}
+
+.right .password .eye {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.right .input input:focus {
+    outline: none;
+}
+
+.right .input input::placeholder {
+    color: rgba(169, 169, 169, 0.8);
+    font-size: 16px;
+}
+
+.sign-up {
+    text-align: center;
+}

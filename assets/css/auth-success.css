@@ -1,0 +1,77 @@
+.content {
+    display: flex;
+}
+
+.left {
+    background-image: url(../assets/images/bg-login.png);
+    flex: 1.25;
+    padding: 50px 0 50px 200px;
+}
+
+.right {
+    background-color: #FFFFFF;
+    flex: 1;
+    padding: 120px 150px 150px 40px;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.image {
+    margin-bottom: 20px;
+}
+
+.sponsor {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.desc-left {
+    width: 488px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+.big {
+    font-size: 24px;
+}
+
+.status {
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    text-align: center;
+    background-color:  #1EC15F;
+    border-radius: 35px;
+    padding-top: 14px;
+    margin-bottom: 60px;
+}
+
+.info {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.information {
+    margin-bottom: 40px;
+}
+
+.desc-right {
+    width: 433px;
+    margin-bottom: 90px;
+}
+
+.desc {
+    color: rgba(58, 61, 66, 0.6);
+}
+
+.confirm {
+    width: 433px;
+}
+
+@media screen and (max-width:1200px) {
+    .button {
+        text-align: center;
+    }
+}

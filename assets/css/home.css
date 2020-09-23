@@ -247,3 +247,10 @@
         margin-right: 0;
     }
 }
+
+@media screen and (max-width: 576px) {
+    .middle span {
+        top: 50px;
+        font-size: 13px;
+    }
+}
