@@ -17,5 +17,5 @@ ________________________________________________________________________________
 _______________________________________________________________________________________
 
 ## Deployed on Netlify
-[![An old rock in the desert](../readme/netlify.png "Shiprock, New Mexico by Beau Rogers")](https://www.netlify.com/)
+[![Netlify](/readme/netlify.png "Shiprock, New Mexico by Beau Rogers")](https://www.netlify.com/)
 https://z-wallet.netlify.app
