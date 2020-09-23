@@ -14,7 +14,7 @@ const toggleVisibility = () => {
 const inputs = document.querySelectorAll('input')
 const button = document.querySelector('button')
 Array.from(inputs).forEach(input => {
-    input.addEventListener('blur', () => {
+    input.addEventListener('input', () => {
         const check = Array.from(inputs).every(input => input.value != "")
     
         if(check) {
