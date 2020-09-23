@@ -247,4 +247,8 @@ hr {
     .reg-btn {
         margin-left: 10px;
     }
+
+    .phone2 img {
+        width: 100%;
+    }
 }
