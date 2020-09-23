@@ -3,7 +3,7 @@
 }
 
 .left {
-    background-image: url(../assets/images/bg-login.png);
+    background-image: url(../images/bg-login.png);
     flex: 1.25;
     padding: 50px 0 50px 200px;
 }
