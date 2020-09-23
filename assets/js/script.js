@@ -6,7 +6,7 @@ const navSlide = () => {
         sidenav.classList.toggle('active')
         if(sidenav.classList.contains('active')) {
             document.body.style.backgroundColor = '#b6b4b4'
-            nav.style.borderRadius = '0 0 0 24px'
+            nav.style.borderRadius = '0'
         } else {
             document.body.style.backgroundColor = '#FAFCFF'
             nav.style.borderRadius = '0 0 24px 24px'

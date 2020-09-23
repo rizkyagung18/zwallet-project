@@ -259,12 +259,18 @@ nav .items.icon {
     }
 
     .content-notification {
-        top: 120px;
+        top: 135px;
         right: 80px;
     }
 }
 
-@media screen and (max-width:770px) {
+@media screen and (max-width:992px) {
+    .content .content-menu {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
     nav .items {
         margin-right: 50px;
     }
@@ -273,9 +279,8 @@ nav .items.icon {
         flex-direction: column;
     }
 
-    .content-menu {
-        flex: 1;
-        margin-bottom: 40px;
+    .content .content-menu {
+        display: none;
     }
 
     .hamburger {
@@ -294,34 +299,38 @@ nav .items.icon {
         text-align: center;
     }
 
+    .container {
+        max-width: 100%;
+    }
+
+    .content-main {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
     .sidenav {
-        overflow: hidden;
         display: flex;
-        z-index: 3;
+        z-index: 4;
         flex-direction: column;
         justify-content: space-between;
         position: absolute;
-        right: -20px;
+        width: 100%;
+        right: 0;
         top: 15.05vh;
         background-color: #FFFFFF;
-        box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.05);
         padding: 40px;
-        transform: translateX(100%);
+        transform: translateY(-100%);
         opacity: 0;
         transition: all 1s;
     }
 
     .sidenav.active {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 
     .sidenav-logout {
         bottom: 0;
-    }
-
-    .content .content-menu {
-        margin-right: 0;
     }
 }
 

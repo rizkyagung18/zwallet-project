@@ -1,0 +1,226 @@
+html, body {
+    background-color: #FFFFFF;
+}
+
+.left {
+    margin-bottom: 398px;
+}
+
+.left span {
+    font-size: 29px;
+    margin-bottom: 141px;
+}
+
+.headers {
+    padding-top: 63px;
+    position: relative;
+}
+
+.left .typo, .partner .typo {
+    width: 474px;
+}
+
+.typo span {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.typography {
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.left .text, .partner .text {
+    margin-bottom: 50px;
+    width: 428px;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url(../images/landing/Mask\ Group.png);
+    background-repeat: no-repeat;
+    padding: 55px 150px;
+    overflow: visible;
+    width: 710px;
+    height: 968px;
+}
+
+.login-btn {
+    width: 120px;
+    height: 48px;
+    background-color: #6379F4;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.reg-btn {
+    width: 120px;
+    height: 48px;
+    background-color:#FFFFFF;
+    color: #6379F4;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.about, .testimonial {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.bg-liquid {
+    background-color: rgba(71, 58, 209, 0.06);
+}
+
+.desc {
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 40px 30px 50px 30px;
+    margin: 70px 20px;
+}
+
+.card div {
+    margin-bottom: 35px;
+}
+
+.card div:last-child {
+    margin-bottom: 0;
+}
+
+.partner {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.icons {
+    margin-top: 120px;
+}
+
+.footer {
+    color: rgba(239, 239, 239, 0.75);
+    padding: 25px;
+}
+
+.footer .title {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+.desc-footer {
+    margin-bottom: 50px;
+}
+
+hr {
+    margin-bottom: 30px;
+}
+
+.feature {
+    padding: 70px 0;
+}
+
+.label {
+    padding: 25px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:1200px) {
+    .partners {
+        flex-direction: column;
+    }
+
+    .partner {
+        padding-bottom: 0;
+    }
+
+    .icons {
+        margin-top: 0;
+        margin-bottom: 70px;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .phone2, .phone {
+        text-align: center;
+    }
+
+    .left {
+        margin-bottom: 20px;
+    }
+
+    .left .text, .partner .text {
+        width: 100%;
+    }
+
+    .right {
+        position: static;
+        background-image: none;
+    }
+
+    .left span {
+        margin-bottom: 20px;
+    }
+
+    .header {
+        flex-direction: column !important;
+    }
+
+
+    .button {
+        position: absolute;
+        right: 20px;
+        top: 60px;
+    }
+
+    .login-btn {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 20px auto;
+    }
+
+    .right {
+        align-items: center !important;
+        width: 100%;
+        padding: 55px;
+    }
+
+    .phone {
+        margin: 10px auto;
+    }
+}

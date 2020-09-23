@@ -1,0 +1,95 @@
+.content-main {
+    flex: 1;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.where .profile {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    margin-right: 20px;
+}
+
+.type {
+    width: 338px;
+    color: #7A7886;
+    margin-bottom: 50px;
+}
+
+.input {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.amount {
+    width: 100%;
+    padding: 15 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 42px;
+    border: none;
+    outline: none;
+    margin-bottom: 30px;
+}
+
+.amount::placeholder {
+    color: #B5BDCC;
+}
+
+.cash {
+    text-align: center;
+}
+
+.notes {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.notes input:focus {
+    border: none;
+    border-bottom: 1px solid #6379F4;
+    outline: none;
+}
+
+.note {
+    padding-left: 35px;
+    padding-bottom: 10px;
+    width: 45%;
+    border: none;
+    border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+}
+
+.note::placeholder {
+    color: #B5BDCC;
+}
+
+.edit {
+    position: absolute;
+    background: url(../images/edit.svg);
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+}
+
+.edit.active {
+    background: url(../images/edit-active.svg);
+}
+
+.confirm {
+    float: right;
+}
+
+@media screen and (max-width:576px) {
+    .type {
+        width: 100%;
+    }
+}

@@ -71,7 +71,7 @@
             background-color: transparent;
         }
 
-        .right .user {
+        .right .users {
             margin-bottom: 60px;
         }
 
@@ -79,23 +79,35 @@
             margin-bottom: 60px;
         }
 
-        .right .email img {
+        .mail {
             position: absolute;
             top: 15px;
+            width: 24px;
+            height: 24px;
+            background: url(../assets/images/mail.svg);
+            background-size: cover;
         }
 
-        .right .user img {
+        .person {
             position: absolute;
             top: 15px;
+            width: 24px;
+            height: 24px;
+            background: url(../assets/images/person.svg);
+            background-size: cover;
         }
 
         .right .password.input {
             margin-bottom: 120px;
         }
 
-        .right .password .lock {
+        .lock {
             position: absolute;
             top: 15px;
+            width: 24px;
+            height: 24px;
+            background: url(../assets/images/lock.svg);
+            background-size: cover;
         }
 
         .right .password .eye {
@@ -140,17 +152,17 @@
             <div class="text desc-right">
                 Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!
             </div>
-            <div class="user input">
-                <img id="user" src="../assets/images/person.svg" alt="">
-                <input type="text" placeholder="Enter your username" autocomplete="off">
+            <div class="users input">
+                <span class="person"></span>
+                <input onfocus="onUserStart()" onblur="onUserEnd()" type="text" placeholder="Enter your username" autocomplete="off">
             </div>
             <div class="email input">
-                <img id="email" src="../assets/images/mail.svg" alt="">
-                <input type="email" placeholder="Enter your e-mail" autocomplete="email">
+                <span class="mail"></span>
+                <input onfocus="onEmailStart()" onblur="onEmailEnd()" type="email" placeholder="Enter your e-mail" autocomplete="email">
             </div>
             <div class="password input">
-                <img class="lock" src="../assets/images/lock.svg" alt="">
-                <input id="password" type="password" placeholder="Enter your password" autocomplete="off">
+                <span class="lock"></span>
+                <input onfocus="onPasswordStart()" onblur="onPasswordEnd()" id="password" type="password" placeholder="Enter your password" autocomplete="off">
                 <img class="eye" src="../assets/images/eye-crossed.svg" alt="">
             </div>
             <div class="button">

@@ -75,7 +75,7 @@
             margin-bottom: 60px;
         }
 
-        .right .email .mail {
+        .mail {
             position: absolute;
             top: 15px;
             width: 24px;
@@ -88,7 +88,7 @@
             margin-bottom: 20px;
         }
 
-        .right .password .lock {
+        .lock {
             position: absolute;
             top: 15px;
             width: 24px;
@@ -150,11 +150,11 @@
             </div>
             <div class="email input">
                 <span class="mail"></span>
-                <input id="email" type="email" placeholder="Enter your e-mail">
+                <input onfocus="onEmailStart()" onblur="onEmailEnd()" id="email" type="email" placeholder="Enter your e-mail">
             </div>
             <div class="password input">
                 <span class="lock"></span>
-                <input id="password" type="password" placeholder="Enter your password" autocomplete="off">
+                <input onfocus="onPasswordStart()" onblur="onPasswordEnd()" id="password" type="password" placeholder="Enter your password" autocomplete="off">
                 <img class="eye" src="../assets/images/eye-crossed.svg" alt="">
             </div>
             <a class="forgot">Forgot password?</a>

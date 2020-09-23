@@ -3,11 +3,38 @@
     border-bottom: 1.5px solid #6379F4;
 }
 
+button.active {
+    width: 100%;
+    background: #6379F4;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.person.active {
+    background: url(../images/auth-active/person.svg);
+}
+
+.mail.active {
+    background: url(../images/auth-active/mail.svg);
+}
+
+.lock.active {
+    background: url(../images/auth-active/lock.svg);
+}
+
 @media screen and (max-width: 1200px) {
     .content .right {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 150px;
     }
 
     .button {
@@ -18,10 +45,6 @@
 @media screen and (max-width: 768px) {
     .content .left {
         display: none;
-    }
-
-    .content .right {
-        padding: 30px auto;
     }
 }
 

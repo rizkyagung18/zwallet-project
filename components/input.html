@@ -7,89 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <style>
-        .content-main {
-            flex: 1;
-            background: #FFFFFF;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-            border-radius: 25px;
-            padding: 30px;
-            box-sizing: border-box;
-        }
-
-        .where .profile {
-            display: flex;
-            margin-bottom: 40px;
-        }
-
-        .avatar {
-            margin-right: 20px;
-        }
-
-        .type {
-            width: 338px;
-            color: #7A7886;
-            margin-bottom: 50px;
-        }
-
-        .input {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .amount {
-            width: 100%;
-            padding: 15 auto;
-            text-align: center;
-            font-weight: bold;
-            font-size: 42px;
-            border: none;
-            outline: none;
-            margin-bottom: 30px;
-        }
-
-        .amount::placeholder {
-            color: #B5BDCC;
-        }
-
-        .cash {
-            text-align: center;
-        }
-
-        .notes {
-            position: relative;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .notes input:focus {
-            border: none;
-            border-bottom: 1px solid #6379F4;
-            outline: none;
-        }
-
-        .note {
-            padding-left: 35px;
-            padding-bottom: 10px;
-            width: 45%;
-            border: none;
-            border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
-        }
-
-        .note::placeholder {
-            color: #B5BDCC;
-        }
-
-        .edit {
-            position: absolute;
-        }
-
-        .confirm {
-            float: right;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/input.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -194,12 +112,12 @@
                 Type the amount you want to transfer and then press continue to the next steps.
             </div>
             <div class="input">
-                <input class="amount primary" type="text" placeholder="0.00" maxlength="10">
+                <input onchange="toRupiah(this)" class="amount primary" type="text" placeholder="0.00" maxlength="10">
                 <span class="cash bold med">Rp120.000 Available</span>
             </div>
             <div class="notes">
-                <img class="edit" src="../assets/images/edit.svg" alt=""/>
-                <input class="note" type="text" placeholder="Add some notes">
+                <span class="edit"></span>
+                <input onfocus="onNoteStart()" onblur="onNoteEnd()" class="note" type="text" placeholder="Add some notes">
             </div>
             <div class="confirm">
                 <a href="confirm.html"><button class="btn-primary">Continue</button></a>
@@ -270,7 +188,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../assets/js/script.js"></script>
     <script>
-        
+        const icon = document.querySelector('.edit')
+        const onNoteStart = () => {
+            icon.classList.add('active')
+        }
+
+        const onNoteEnd = () => {
+            icon.classList.remove('active')
+        }
+
+        const toRupiah = (e) => {
+            const number = parseInt(e.value)
+            if(number) {
+                const currency = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR'}).format(number)
+                e.value = currency
+            } else {
+                e.value = ''
+            }
+        }
     </script>
 </body>
 </html>
