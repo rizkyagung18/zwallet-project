@@ -24,11 +24,6 @@ https://z-wallet.netlify.app
 ______________________________________________________________________________________
 
 ## Screenshot
-[![1](/readme/1.png)]
+[![1](/readme/1.png)]   [![1](/readme/2.png)]
 
-[![1](/readme/2.png)]
-
-
-[![1](/readme/3.png)]
-
-[![1](/readme/4.png)]
+[![1](/readme/3.png)]   [![1](/readme/4.png)]
