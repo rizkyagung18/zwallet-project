@@ -12,11 +12,24 @@ Zwallet adalah sebuah aplikasi yang berfokus pada kebutuhan perbankan untuk semu
 
 ______________________________________________________________________________________
 
-## Features
+## Page
+- Landing Page
+- Login & Sign Up
+- Home
+- Transaction History
+- Transfer
+- PIN Input
 
 _______________________________________________________________________________________
 
 ## Deployed on Netlify
-[![Netlify](/readme/netlify.png "Shiprock, New Mexico by Beau Rogers")](https://www.netlify.com/)
+[![Netlify](/readme/netlify.png)](https://www.netlify.com/)
 
 https://z-wallet.netlify.app
+
+______________________________________________________________________________________
+
+## Screenshot
+[![1](/readme/1.png)]   [![1](/readme/2.png)]
+
+[![1](/readme/3.png)]   [![1](/readme/4.png)]
