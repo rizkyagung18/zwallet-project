@@ -112,7 +112,7 @@
                 Type the amount you want to transfer and then press continue to the next steps.
             </div>
             <div class="input">
-                <input onchange="toRupiah(this)" class="amount primary" type="text" placeholder="0.00" maxlength="10">
+                <input onkeyup="toRupiah(this)" class="amount primary" type="text" placeholder="0.00">
                 <span class="cash bold med">Rp120.000 Available</span>
             </div>
             <div class="notes">
@@ -197,14 +197,24 @@
             icon.classList.remove('active')
         }
 
-        const toRupiah = (e) => {
-            const number = parseInt(e.value)
-            if(number) {
-                const currency = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR'}).format(number)
-                e.value = currency
-            } else {
-                e.value = ''
+        const formatRupiah = (angka, prefix) => {
+            let number_string = angka.replace(/[^,\d]/g, '').toString()
+            let split           = number_string.split(',')
+            let sisa             = split[0].length % 3
+            let rupiah             = split[0].substr(0, sisa)
+            let ribuan             = split[0].substr(sisa).match(/\d{3}/gi);
+
+            if(ribuan){
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
             }
+ 
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+
+        const toRupiah = (e) => {
+            e.value = formatRupiah(e.value, 'Rp. ');
         }
     </script>
 </body>
