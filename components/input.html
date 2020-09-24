@@ -197,14 +197,14 @@
             icon.classList.remove('active')
         }
 
-        const formatRupiah = (angka, prefix) => {
-            let number_string = angka.replace(/[^,\d]/g, '').toString()
+        const formatRupiah = (num, prefix) => {
+            let number_string = num.replace(/[^,\d]/g, '').toString()
             let split           = number_string.split(',')
             let remind             = split[0].length % 3
             let idr             = split[0].substr(0, remind)
             let thousand             = split[0].substr(remind).match(/\d{3}/gi);
 
-            if(ribuan){
+            if(thousand){
                 separator = remind ? '.' : '';
                 idr += separator + thousand.join('.');
             }
