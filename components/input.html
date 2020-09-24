@@ -200,17 +200,17 @@
         const formatRupiah = (angka, prefix) => {
             let number_string = angka.replace(/[^,\d]/g, '').toString()
             let split           = number_string.split(',')
-            let sisa             = split[0].length % 3
-            let rupiah             = split[0].substr(0, sisa)
-            let ribuan             = split[0].substr(sisa).match(/\d{3}/gi);
+            let remind             = split[0].length % 3
+            let idr             = split[0].substr(0, remind)
+            let thousand             = split[0].substr(remind).match(/\d{3}/gi);
 
             if(ribuan){
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
+                separator = remind ? '.' : '';
+                idr += separator + thousand.join('.');
             }
  
-            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+            idr = split[1] != undefined ? idr + ',' + split[1] : idr;
+            return prefix == undefined ? idr : (idr ? 'Rp. ' + idr : '');
         }
 
         const toRupiah = (e) => {
