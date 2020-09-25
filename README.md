@@ -25,7 +25,7 @@ ________________________________________________________________________________
 ## Deployed on Netlify
 [![Netlify](/readme/netlify.png)](https://www.netlify.com/)
 
-https://z-wallet.netlify.app
+https://z-wallet-rizky.netlify.app
 
 ______________________________________________________________________________________
 
