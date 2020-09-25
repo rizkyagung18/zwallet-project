@@ -40,10 +40,25 @@
                 <input oninput="requiredNumber(this)" type="text" maxlength="1">
             </div>
             <div class="button">
-                <a href="auth-success.html"><button class="auth-primary-btn confirm">Confirm</button></a>
+                <a href="auth-success.html"><button class="auth-grey-btn confirm">Confirm</button></a>
             </div>
         </div>
     </div>
     <script src="../assets/js/pin.js"></script>
+    <script>
+        const inputs = document.querySelectorAll('input')
+const button = document.querySelector('button')
+Array.from(inputs).forEach(input => {
+    input.addEventListener('input', () => {
+        const check = Array.from(inputs).every(input => input.value != "")
+    
+        if(check) {
+            button.classList.add('active')
+        } else {
+            button.classList.remove('active')
+        }
+    })
+})
+    </script>
 </body>
 </html>

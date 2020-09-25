@@ -24,7 +24,5 @@ const requiredNumber = (e) => {
             })
        }
     }
-
-
 }
 
